@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<iostream>
+using namespace std;
+
+class base
+{
+public:
+    virtual void print()
+    {
+        cout<<"This Is Base Class"<<endl;
+    }
+};
+
+class derived : public base
+{
+public:
+    void print()
+    {
+        cout<<"This Is Derived Class"<<endl;
+    }
+};
+
+int main()
+{
+    base *bptr,bptr2;
+    derived der;
+    bptr = &der;
+    bptr->print();
+    bptr2.print();
+    return 0;
+}

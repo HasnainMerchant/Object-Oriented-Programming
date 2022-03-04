@@ -1,0 +1,44 @@
+#include<iostream>
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#define MAX 100
+using namespace std;
+
+class String
+{
+    char str[MAX];//Private Variable Of String
+
+public:
+    void getString()//String Accept Function
+    {
+        cout<<"Enter String : ";
+        cin>>str;
+    }
+    void display()//Display Function
+    {
+        cout<<str<<endl;
+    }
+    String operator + (String obj)//Operator Overloading Function
+    {
+        String s;
+        strcat(str,obj.str);
+        strcpy(s.str,str);
+        return s;
+    }
+};
+
+int main()
+{
+    String s1,s2,s3;//Objects Of Class String
+    s1.getString();//Accept String From User
+    s2.getString();//Accept Second String From User
+    cout<<"String 1 Is : ";
+    s1.display();
+    cout<<"String 2 Is : ";
+    s2.display();
+    s3 = s1 + s2;//Operator Overloading(Concatenate Strings)
+    cout<<"Concatenated String Is : ";
+    s3.display();//Display The Concatenated String
+    return 0;
+}

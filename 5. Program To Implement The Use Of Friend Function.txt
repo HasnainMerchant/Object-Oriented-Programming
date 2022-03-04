@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<iostream>
+using namespace std;
+
+class student
+{
+private:
+
+    int rollno;
+    char div;
+
+public:
+
+    student(int roll,char division)
+    {
+        rollno = roll;
+        div = division;
+    }
+    friend class teacher;//Friend Class
+};
+
+class teacher
+{
+public:
+
+    void showStudentDetails(student &x)
+    {
+        cout<<"Student Roll No = "<<x.rollno<<endl;
+        cout<<"Student Division Is = "<<x.div<<endl;
+    }
+};
+
+int main()
+{
+    student s1(32,'B');
+    teacher t1;
+    t1.showStudentDetails(s1);
+    return 0;
+}

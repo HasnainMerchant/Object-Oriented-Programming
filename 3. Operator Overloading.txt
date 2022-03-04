@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+
+class Distance
+{
+    int feet,inches;
+
+public:
+
+    Distance()
+    {
+      feet = 0;
+      inches = 0;
+    }
+    Distance(int feet1,int inches1)
+    {
+        feet = feet1;
+        inches = inches1;
+    }
+
+    void great()
+    {
+        cout<<feet<<"'"<<inches<<" is greater "<<endl;
+    }
+
+    Distance operator < (Distance dis2)
+    {
+        Distance d3;
+        if(feet > dis2.feet)
+        {
+            d3.feet = feet;
+            d3.inches = inches;
+            return d3;
+        }
+        if(feet == dis2.feet && inches > dis2.inches)
+        {
+            d3.feet = feet;
+            d3.inches = inches;
+            return d3;
+        }
+        else
+        {
+            d3.feet = dis2.feet;
+            d3.inches = dis2.inches;
+            return d3;
+        }
+    }
+};
+
+int main()
+{
+    Distance d1(7,7);
+    Distance d2(5,7);
+    Distance d3 = d1 < d2;
+    d3.great();
+}

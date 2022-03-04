@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<iostream>
+using namespace std;
+
+template <class T>
+T Min(T num1,T num2)
+{
+    return (num1 < num2) ? num1 : num2;
+}
+
+int main()
+{
+    int num1,num2;
+    char char1,char2;
+    float f1,f2;
+    cout<<"Enter Integer Numbers "<<endl;
+    cin>>num1>>num2;
+    cout<<"Minimum Is : "<<Min<int>(num1,num2)<<endl;
+
+    cout<<"Enter Characters "<<endl;
+    cin>>char1>>char2;
+    cout<<"Minimum Is : "<<Min<char>(char1,char2)<<endl;
+
+    cout<<"Enter Floating Numbers "<<endl;
+    cin>>f1>>f2;
+    cout<<"Minimum Is : "<<Min<float>(f1,f2)<<endl;
+    return 0;
+}

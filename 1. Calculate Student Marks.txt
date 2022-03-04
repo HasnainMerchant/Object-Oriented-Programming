@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<iostream>
+#include<conio.h>
+#include<cstring>
+using namespace std;
+
+class student
+{
+    int rollno;
+    float percent,marks[10],tot;
+    char name[100];
+public:
+    void addstudent()
+    {
+        cout<<"Enter Roll No : ";
+        cin>>rollno;
+        cout<<"Enter Name Of Student : ";
+        cin>>name;
+    }
+
+    void calc(int num)
+    {
+        percent = 0;
+        tot = 0;
+        cout<<"Enter The Marks "<<endl;
+        for(int i=0;i<num;i++)
+        {
+            cin>>marks[i];
+            tot = tot + marks[i];
+        }
+        percent = tot/num;
+    }
+
+    void display()
+    {
+        cout<<"The Name Of Student Is : "<<name<<endl;
+        cout<<"The Roll No Is : "<<rollno<<endl;
+        cout<<"The Percentage Is : "<<percent<<endl;
+    }
+
+};
+
+
+int main()
+{
+    student s[100];
+    int num,n;
+    cout<<"Enter Number Of Subjects : ";
+    cin>>num;
+    cout<<"Enter Number Of Students To Add : ";
+    cin>>n;
+    for(int i = 0 ; i<n ; i++)
+    {
+        s[i].addstudent();
+        s[i].calc(num);
+        s[i].display();
+    }
+    return 0;
+}
